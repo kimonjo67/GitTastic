@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+<body>
+
+  <div id="gifs-appear-here"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    // API Key
+    var api_key = "824o5KFOktF8K14ZKGWyXFpylTXADkli";
+    // Example queryURL for Giphy API
+    var queryURL = "http://api.giphy.com/v1/gifs/random?&api_key=824o5KFOktF8K14ZKGWyXFpylTXADkli&tag=&limit=5"
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).done(function(response) {
+      console.log(response);
+
+    // Store the response from the Ajax request in a variable
+      var results = response.data;
+      console.log(results);
+    // Loop through every result item
+    for (var i = 0; i < results.length; i++) {
+
+    // Create and store a div tag
+    var animal = $("<div>");
+
+    //Create a paragraph tag with the results item rating
+    var p = $("<p>").text("Rating: " + results[i].rating);
+
+    //Append the divs and p tags
+    animal.append(p);
+
+
+    //prepend the data to the HTML page
+    $("#gifs-appear-here").prepend(animal);
+
+    }
+
+
+    });
+  </script>
+
+</body>
+
+</html>
