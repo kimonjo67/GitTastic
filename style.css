@@ -1,5 +1,11 @@
-button, form, input, p{
-	margin:10px;
+body{
+	background-color: black;
+}
+form, p{
+	margin:10px 10px;
+}
+h2{
+	color: beige;
 }
 
 img{
@@ -7,6 +13,25 @@ img{
 	float:left;
 }
 p{
-	margin:10px;
+	margin:-10px;
 	float:left;
+	color:yellow;
+}
+.nav{
+	margin:0 auto;
+}
+.container{
+	float: left;
+}
+.row {
+    margin-top: 60px;
+ }
+ button, input, optgroup, select, textarea {
+    margin: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    background: beige;
+}
+button.gifClass{
+	margin:20px;
 }

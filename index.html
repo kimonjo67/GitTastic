@@ -4,10 +4,24 @@
 <head>
   <meta charset="utf-8">
   <title>Giphy API</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
   
 <body>
+  <!---Nav Bar--> 
+  <nav class="navbar navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Samuel Mwangi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto p-1">
+        <a class="nav-item nav-link" href="https://giphy.com/">More GIFs??</a>
+      </div>
+    </div>
+</nav>
+<div class="container">
   <!--Rendered buttons for the gifs-->
   <div class="row">
     <div class="col-md-12">
@@ -30,6 +44,16 @@
   <div id="gifs-appear-here"></div>
     </div>
   </div>
+</div>
+  <!--footer section--> 
+<div class="row">
+  <div class="col-md-12">
+    <nav class="navbar fixed-bottom navbar-light bg-light mx-auto">
+      <span class="navbar-text mx-auto">&copy;Copyright 2018 Samuel MWangi.</span>
+    </nav>
+  </div>
+</div>  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="app.js">
   </script>
