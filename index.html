@@ -4,85 +4,34 @@
 <head>
   <meta charset="utf-8">
   <title>Giphy API</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
+  
 <body>
+  <!--Rendered buttons for the gifs-->
+  <div class="row">
+    <div class="col-md-12">
+      <div id="buttons-view"></div>
+    </div>
+  </div>
   <!-- Buttons for the gifs-->
-  <button data-funny="shaq">shaq</button>
-  <button data-funny="fail">fails</button>
-  <button data-funny="soccer">goal!!</button>
-  <button data-funny="lebron">who's the king</button>
-  <button data-funny="ostrich">ostrich</button>
-  <button data-funny="funny">gigs and laughs</button>
-  <button data-funny="nfl">touch down</button>
 
   <form id="gifs-form">
-    <label for="gif-input"><h2>Add a GIF</h2></label>
-    <input type="text" name="gif-input"><br>
+    <label for="funny-input"><h2>Add a GIF</h2></label>
+    <input type="text" id="funny-input"><br>
+  <!-- Button for new added gifs -->
     <input id="add-gif" type="submit" value="submit">
   </form>
 
 
   <!-- Images will appear here -->
+  <div class="row">
+    <div class="col-md-12">
   <div id="gifs-appear-here"></div>
-
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-
-    //Adding click events listener to all buttons
-    $("button").on("click", function (argument) {
-      // body...
-      //Grabbing ans storing the data-animal value from the button
-      var funny = $(this).attr("data-funny");
-
-    // API Key
-    var api_key = "824o5KFOktF8K14ZKGWyXFpylTXADkli";
-    // QueryURL for Giphy API
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        funny + "&api_key=dc6zaTOxFJmzC&limit=10&rating=g";
-    // Performing the AJax request
-    $.ajax({
-      url: queryURL,
-      method: 'GET'
-    })
-    //After data comes back from the request
-    .done(function(response) {
-      console.log(response);
-
-    // Store the response from the Ajax request in a variable
-      var results = response.data;
-      console.log(results);
-    // Loop through every result item
-    for (var i = 0; i < results.length; i++) {
-
-    // Create and store a div tag
-    var funny = $("<div>");
-
-    //Create a paragraph tag with the results item rating
-    var p = $("<p>").text("Rating: " + results[i].rating);
-    // Creating and storing an image tag
-    var funnyImage = $("<img>");
-    // Set the source attrtibute of the image to the property pulled off the results item image
-    funnyImage.attr("src", results[i].images.fixed_height.url);
-
-    //Append the divs and p tags and image tags
-    funny.append(p);
-    funny.append(funnyImage);
-
-    //prepend the data to the HTML page
-    $("#gifs-appear-here").prepend(funny);
-    };
-    });
-    
-    });
-
-    //Render buttons
-    function renderButtons(){
-      
-    }
-
-    //Pausing and resuming gifs images
-
+  <script src="app.js">
   </script>
 
 </body>
