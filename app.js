@@ -31,6 +31,8 @@
       var funny = $("#funny-input").val().trim();
       // Funny gif input is then added to the array
       funnyArray.push(funny);
+      //Clear the text box
+      $("#funny-input").val("");
       //Call renderButtons
       renderButtons();
     });
@@ -50,7 +52,6 @@
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
       }
-      console.log("gif paused");
     };
     renderButtons();
 
